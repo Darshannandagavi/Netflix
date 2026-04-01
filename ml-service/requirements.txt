@@ -1,5 +1,7 @@
-flask
+fastapi
+uvicorn[standard]
+gunicorn
+scikit-learn
 pandas
 numpy
-scikit-learn
-gunicorn
+python-dotenv
