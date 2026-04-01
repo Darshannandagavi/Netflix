@@ -265,7 +265,7 @@ function UserNavbar() {
 
                 {/* Profile */}
                 <Link
-                  to="/profile"
+                  to="/user/profile"
                   className="nf-dropdown-item"
                   onClick={() => setDropdownOpen(false)}
                 >
