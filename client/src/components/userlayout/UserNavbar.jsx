@@ -201,9 +201,9 @@ function UserNavbar() {
   };
 
   const links = [
-    { to: "/movies",    label: "Movies"    },
-    { to: "/dashboard", label: "Dashboard" },
-    { to: "/feedback",  label: "Feedback"  },
+    { to: "/user/movies",    label: "Movies"    },
+    { to: "/user/dashboard", label: "Dashboard" },
+    { to: "/user/feedback",  label: "Feedback"  },
   ];
 
   const isActive = (path) => location.pathname === path;
