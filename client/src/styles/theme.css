@@ -1,0 +1,20 @@
+:root {
+
+  --primary:       #e11d48;
+  --primary-hover: #be123c;
+  --primary-light: #fff1f2;
+  --primary-text:  #e11d48;
+
+  --bg-main:      #0f0f0f;
+  --bg-secondary: #111111;
+  --bg-card:      #1a1a1a;
+  --bg-input:     #111111;
+  --bg-nav:       rgba(15,15,15,0.92);
+  --text-main:    #ffffff;
+  --text-muted:   #9ca3af;
+  --text-faint:   #6b7280;
+  --border:       rgba(255,255,255,0.1);
+  --border-hover: rgba(255,255,255,0.2);
+  --shadow:       0 8px 32px rgba(0,0,0,0.4);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
