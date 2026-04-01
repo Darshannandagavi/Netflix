@@ -7,6 +7,10 @@ CORS(app)  # ✅ Flask CORS, not FastAPI
 
 load_model()
 
+@app.route("/")
+def home():
+    return "ML API Running"
+
 @app.route("/api/recommend", methods=["POST"])
 def recommend():
     try:
