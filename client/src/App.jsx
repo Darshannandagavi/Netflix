@@ -53,6 +53,7 @@ return ( <Routes>
     <Route path="feedbacks" element={<UserFeedbacks />} />
     <Route path="users" element={<AdminUsers />} />
     <Route path="contacts" element={<AdminContacts />} />
+    <Route path="profile" element={<Profile />} />
   </Route>
 
   {/* Fallback */}

@@ -145,6 +145,7 @@ function AdminNavbar() {
     { to: "/admin/users",     label: "Users"     },
     { to: "/admin/feedbacks", label: "Feedbacks" },
     { to: "/admin/contacts",  label: "Messages"  },
+    { to: "/admin/profile",  label: "Profile"  },
   ];
 
   const isActive = (path) => location.pathname === path;
