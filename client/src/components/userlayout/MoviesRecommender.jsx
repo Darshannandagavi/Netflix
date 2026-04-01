@@ -515,7 +515,7 @@ export default function MovieRecommender() {
       return;
     }
     try {
-      const res    = await fetch("http://localhost:8000/api/recommend", {
+      const res    = await fetch("https://netflix-oj1w.onrender.com/api/recommend", {
         method:  "POST",
         headers: { "Content-Type": "application/json" },
         body:    JSON.stringify({ watched: updatedWatched }),

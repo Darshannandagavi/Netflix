@@ -1,8 +1,16 @@
 from flask import Flask, request, jsonify
 from recommender import load_model, recommend_from_history
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = Flask(__name__)
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],          # tighten this after testing
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # Load model once
 load_model()
 
