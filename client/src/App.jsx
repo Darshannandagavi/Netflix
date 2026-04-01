@@ -23,7 +23,7 @@ function App() {
   return (
       <Routes>
 
-        <Route element={<GuestLayout />}>
+        <Route path="/" element={<GuestLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
@@ -34,19 +34,19 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Route>
 
-        <Route element={<UserLayout />}>
-          <Route path="/dashboard" element={<UserDashboard />} />
-          <Route path="/movies" element={<MovieRecommender />} />
-          <Route path="/feedback" element={<FeedbackForm />} />
-          <Route path="/profile" element={<Profile />} />
+        <Route path="/user" element={<UserLayout />}>
+          <Route path="dashboard" element={<UserDashboard />} />
+          <Route path="movies" element={<MovieRecommender />} />
+          <Route path="feedback" element={<FeedbackForm />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
 
-        <Route element={<AdminLayout />}>
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/movies" element={<MovieRecommender />} />
-          <Route path="/admin/feedbacks" element={<UserFeedbacks />} />
-          <Route path="/admin/users" element={<AdminUsers />} />
-          <Route path="/admin/contacts" element={<AdminContacts />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="movies" element={<MovieRecommender />} />
+          <Route path="feedbacks" element={<UserFeedbacks />} />
+          <Route path="users" element={<AdminUsers />} />
+          <Route path="contacts" element={<AdminContacts />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

@@ -21,7 +21,7 @@ function Login() {
     try {
       const res = await API.post("/auth/login", form);
       console.log(res)
-      navigate(res.data.user.role === "admin" ? "/admin" : "/movies");
+      navigate(res.data.user.role === "admin" ? "/admin" : "/user");
     } catch (err) {
       console.log(err)
       setError(err.response?.data?.message || "Login failed. Try again.");
