@@ -1,32 +1,20 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from recommender import load_model, recommend_from_history
-from fastapi.middleware.cors import CORSMiddleware
-
 
 app = Flask(__name__)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],          # tighten this after testing
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-# Load model once
+CORS(app)  # ✅ Flask CORS, not FastAPI
+
 load_model()
 
-@app.route("/recommend", methods=["POST"])
+@app.route("/api/recommend", methods=["POST"])
 def recommend():
     try:
         data = request.json
         watched = data.get("watched", [])
-
         print("Incoming watched:", watched)
-
-        # ✅ PASS FULL OBJECTS (NOT TITLES)
         results = recommend_from_history(watched, top_n=10)
-
-        return jsonify(results)
-
+        return jsonify({"data": results})  # ✅ wrapped in {data:[]} to match frontend
     except Exception as e:
         print("FLASK ERROR:", str(e))
         return jsonify({"error": str(e)}), 500
